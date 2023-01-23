@@ -1,0 +1,14 @@
+---
+
+- name: "Docker::login | Check required variables"
+  ansible.builtin.fail:
+    msg: "Docker::login | Variable '{{ item }}' is not defined"
+  when: (vars[item] is not defined) or (vars[item] is none) or (vars[item]|length == 0)
+  with_items: "{{ required_vars }}"
+
+- name: "Docker::login | Log into private registry and force re-authorization"
+  community.docker.docker_login:
+    registry_url: "{{ docker_login_registry_url }}"
+    username:  "{{ docker_login_username }}"
+    password:  "{{ docker_login_password }}"
+    reauthorize: yes

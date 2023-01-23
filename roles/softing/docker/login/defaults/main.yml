@@ -1,0 +1,10 @@
+---
+
+required_vars:
+  - docker_login_registry_url
+  - docker_login_username
+  - docker_login_password
+
+docker_login_registry_url:
+docker_login_username:
+docker_login_password:

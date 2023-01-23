@@ -1,0 +1,8 @@
+---
+
+required_vars:
+  - docker_user_hostname
+  - docker_user_pubkeys
+
+docker_user_hostname:
+docker_user_pubkeys:

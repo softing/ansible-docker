@@ -1,0 +1,25 @@
+---
+
+- name: "Docker::user | Check required variables"
+  ansible.builtin.fail:
+    msg: "Docker::user | Variable '{{ item }}' is not defined"
+  when: (vars[item] is not defined) or (vars[item] is none) or (vars[item]|length == 0)
+  with_items: "{{ required_vars }}"
+
+- name: "Docker::user | Create user"
+  ansible.builtin.user:
+    name: docker
+    groups:
+      - sudo
+      - docker
+    shell: /bin/bash
+    generate_ssh_key: yes
+    state: present
+    ssh_key_comment: docker@{{ docker_user_hostname }}
+
+- name: "Docker::user | Create ssh keys for user"
+  authorized_key:
+    user: docker
+    state: present
+    key: "{{ item }}"
+  loop: "{{ docker_user_pubkeys }}"
