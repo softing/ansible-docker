@@ -13,7 +13,7 @@
       - sudo
       - docker
     shell: /bin/bash
-    generate_ssh_key: yes
+    generate_ssh_key: true
     state: present
     ssh_key_comment: docker@{{ docker_user_hostname }}
 

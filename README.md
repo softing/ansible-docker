@@ -1,30 +1,28 @@
-# Ansible Collection - softing.docker
+# Sofing • Ansible • Docker
 
-## Available roles
+**Different Ansible roles for for working in a Docker environment**
 
-### softing/docker/login
-
-Authorization in the Docker Registry
-
-```yaml
-- ansible.builtin.include_role:
-    name: softing/docker/login
-  vars:
-    docker_login_registry_url: "registy.url.com"
-    docker_login_username: "username"
-    docker_login_password: "password"
+```
+01010011 01001111 01000110 01010100 01001001 01001110 01000111 
 ```
 
-### softing/docker/user
+## About
 
-Create a docker user
+This project provides:
 
-```yaml
-- ansible.builtin.include_role:
-    name: softing/docker/user
-  vars:
-    docker_user_hostname: "user.hostname.com"
-    docker_user_pubkeys:
-      - Key1
-      - Key2
-```
+- [ansible](https://en.wikipedia.org/wiki/Ansible_%28software%29) [roles](#roles) Ansible roles for working in a Docker environment
+
+## Roles
+
+- [softing_docker_login](roles%2Fsofting_docker_login) - Authorize user in Docker Registry
+- [softing_docker_user](roles%2Fsofting_docker_user) - Create a user with rights to manage the Docker service
+
+## Source code
+
+- [Github](https://github.com/softing/ansible-linux)
+
+## License
+
+- [GNU GPLv3](https://github.com/softing/ansible-linux/blob/main/LICENSE) unless noted otherwise in individual files/directories
+- Documentation is under the [Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license
+

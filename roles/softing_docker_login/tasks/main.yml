@@ -9,6 +9,6 @@
 - name: "Docker::login | Log into private registry and force re-authorization"
   community.docker.docker_login:
     registry_url: "{{ docker_login_registry_url }}"
-    username:  "{{ docker_login_username }}"
-    password:  "{{ docker_login_password }}"
-    reauthorize: yes
+    username: "{{ docker_login_username }}"
+    password: "{{ docker_login_password }}"
+    reauthorize: true

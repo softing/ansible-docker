@@ -1,0 +1,12 @@
+# @tag apache - setup the apache web server
+# @tag ssl - setup SSL certificates and configuration
+# @tag apache-mod-evasive - setup apache anti-DoS module
+
+galaxy_info:
+  role_name: softing_docker_login
+  author: "Illia Skorik <ilya.skorik@gmail.com>"
+  description: "This role authorizes the current user in the Docker repository"
+  license: "GPL-3.0"
+  min_ansible_version: "2.12"
+  galaxy_tags:
+    - docker
